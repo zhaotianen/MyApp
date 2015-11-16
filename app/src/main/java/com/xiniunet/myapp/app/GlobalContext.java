@@ -55,6 +55,7 @@ public final class GlobalContext extends Application {
         ImageLoader.getInstance().init(configuration);
 
         //初始化KLog
+        //https://github.com/zhaotianen/KLog
         KLog.init(BuildConfig.LOG_DEBUG);
     }
 

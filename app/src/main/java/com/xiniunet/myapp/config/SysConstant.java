@@ -37,6 +37,9 @@ package com.xiniunet.myapp.config;
 public class SysConstant {
     public static final String WEB_URL = "http://www.xiniunet.com";
 
+    /**
+     * 数字
+     */
     public static final int ONE = 1;
     public static final int TWO = 2;
     public static final int THREE = 3;
@@ -50,6 +53,9 @@ public class SysConstant {
     public static final int HUNDRED = 100;
     public static final int THOUSAND = 1000;
 
+    /**
+     * 星期
+     */
     public static final String MONDAY = "周一";
     public static final String TUEDDAY = "周二";
     public static final String WEDNESDAY = "周三";
@@ -58,17 +64,25 @@ public class SysConstant {
     public static final String SATURDAY = "周六";
     public static final String SUNDAY = "周日";
 
+    /**
+     * 年月日
+     */
     public static final String YEAR = "年";
     public static final String MONTH = "月";
     public static final String DAY = "日";
+    /**
+     * 时分秒
+     */
     public static final String HOUR = "时";
     public static final String MINUTE = "分";
     public static final String SECOND = "秒";
 
-
-    public static final String F = "女";
-    public static final String M = "男";
-    public static final String U = "未知";
+    /**
+     * 性别
+     */
+    public static final String FEMALE = "女";
+    public static final String MALE = "男";
+    public static final String UNKNOWN = "未知";
 
 
 }
