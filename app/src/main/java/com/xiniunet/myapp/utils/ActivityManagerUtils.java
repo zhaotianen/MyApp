@@ -1,24 +1,21 @@
-package com.xiniunet.myapp.module.base;
+package com.xiniunet.myapp.utils;
 
 import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
 
-import com.xiniunet.myapp.utils.ActivityManagerUtils;
-
-import butterknife.ButterKnife;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p/>
  * <pre>
  * ***************************************************************
  *  Copyright (c) 2014-2015 –苏州犀牛网络科技有限公司
- *  Package: com.xiniunet.myapp.module.base
- *  Description:
+ *  Package: com.xiniunet.myapp.utils
+ *  Description:Activity管理类
  *  @since 1.0.0
  *  @author 赵天恩
- *  @date 2015/11/3
- *  @time 10:20
+ *  @date 2015/11/16
+ *  @time 11:01
  * ***************************************************************
  * </pre>
  * <p/>
@@ -42,34 +39,40 @@ import butterknife.ButterKnife;
  * 　　　　　┗┻┛　┗┻┛
  * ━━━━━━神兽出没━━━━━━
  */
-public class BaseActivity extends Activity {
-    private Context context;
+public class ActivityManagerUtils {
+    public static List<Activity> activityList = new ArrayList<Activity>();
 
-    public BaseActivity() {
-        ActivityManagerUtils.addActivity(this);
-
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        context = this;
-        initView();
-        initData();
+    /**
+     * 添加activity
+     *
+     * @param activity
+     */
+    public static void addActivity(Activity activity) {
+        activityList.add(activity);
     }
 
     /**
-     * 初始化视图
+     * 获取activityList
+     *
+     * @return
      */
-    public void initView() {
-        ButterKnife.bind(this);
+    public static List<Activity> getActivityList() {
+        if (activityList.size() > 0) {
+            return activityList;
+        }
+        return null;
+
     }
 
     /**
-     * 初始化数据
+     * 移除activity
      */
-    public void initData() {
+    public static void killAllActivity() {
+        if (activityList.size() > 0) {
+            for (Activity activity : activityList) {
+                activity.finish();
+            }
+        }
 
     }
-
 }
