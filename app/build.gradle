@@ -15,7 +15,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "LOG_DEBUG", "false"
         }
+
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+        }
+
     }
 }
 
@@ -28,4 +34,5 @@ dependencies {
     compile files('libs/universal-image-loader-1.9.3-SNAPSHOT.jar')
     compile 'com.mcxiaoke.volley:library:1.0.17'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    compile 'com.github.zhaokaiqiang.klog:library:0.0.1'
 }
